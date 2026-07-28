@@ -62,7 +62,7 @@ schedule:
 #     只要 api_url 不是你自己部署的实例，都推荐配置 expected_domain
 # ===============================================================
 platforms:
-  enabled: true                         # 是否启用热榜平台抓取（true=启用, false=关闭）
+  enabled: false                         # 是否启用热榜平台抓取（true=启用, false=关闭）
   api_url: ""                            # 热榜数据 API 地址（留空使用默认地址）
                                         # 如果你自行部署了 newsnow，填入你的地址，如: https://your-domain.com/api/s
   sources:
@@ -118,7 +118,7 @@ rss:
   freshness_filter:
     enabled: true                     # 是否启用新鲜度过滤（true=启用, false=关闭）
 
-    max_age_days: 1                   # 最大文章年龄（天）
+    max_age_days: 3                   # 最大文章年龄（天）
                                       # - 正整数：只推送 N 天内的文章
                                       # - 0：禁用过滤，推送所有文章
 
@@ -127,19 +127,69 @@ rss:
   # - 正整数：覆盖全局设置，只推送此天数内的文章
   # - 0：禁用此频道的新鲜度过滤，推送所有文章
   feeds:
-    - id: "hacker-news"
-      name: "Hacker News"
-      url: "https://hnrss.org/frontpage"
+    - id: "新浪财经-ESG"
+      name: "新浪财经ESG板块"
+      url: "https://finance.sina.com.cn/esg/"
 
-    - id: "ruanyifeng"
-      name: "阮一峰的网络日志"
-      url: "http://www.ruanyifeng.com/blog/atom.xml"
-      enabled: false                  # 禁用
-      # max_age_days: 3               # 示例：推送 3 天内的文章（更新较慢的博客）
+    - id: "CNAS"
+      name: "国家认证认可监督管理委员会"
+      url: "https://www.cnca.gov.cn"
+      enabled: true                   # 禁用
+      # max_age_days: 2               # 示例：推送 3 天内的文章（更新较慢的博客）
      
-    - id: "yahoo-finance"
+    - id: "yahoo-finance-ESG"
       name: "雅虎财经"
       url: "https://finance.yahoo.com/news/rssindex"
+
+    - id: "中国标准信息公共服务平台"
+      name: "SAMR"
+      url: "https://std.samr.gov.cn/"
+
+    - id: "中国标准化研究院"
+      name: "中国标准化研究院"
+      url: "https://www.cnis.ac.cn/bydt/zhxw/"
+
+    - id: "CASC"
+      name: "财政部会计准则委员会"
+      url: "https://www.casc.org.cn"
+
+    - id: "生态环境部"
+      name: "生态环境部"
+      url: "https://www.mee.gov.cn"
+
+    - id: "国家发改委"
+      name: "国家发改委"
+      url: "https://www.ndrc.gov.cn/xwdt/"
+
+    - id: "可持续发展网"
+      name: "可持续发展网"
+      url: "https://www.sdg-china.net"
+
+    - id: "中证ESG"
+      name: "中证指数"
+      url: "https://www.csindex.com.cn/zh_cn/esg#/"
+
+    - id: "清华SDG研究院-新闻页"
+      name: "清华SDG研究院"
+      url: "https://thusdg.tsinghua.edu.cn/index.htm"
+
+    - id: "清华SDG研究院-首页"
+      name: "清华SDG研究院"
+      url: "https://thusdg.tsinghua.edu.cn/xw.htm"
+
+    - id: "CDP"
+      name: "CDP全球环境信息研究中心"
+      url: "https://www.cdp.net/zh"
+
+    - id: "ISSB"
+      name: "ISSB国际可持续准则理事会"
+      url: "https://www.ndrc.gov.cn/xwdt/"
+
+    - id: "EcoVadis"
+      name: "EcoVadis"
+      url: "https://ecovadis.com/zh"
+
+    
 
     # 自定义源示例
     # - id: "custom-feed"
